@@ -15,17 +15,14 @@ class ProfileController extends Controller
     {
       return view('admin.profile.edit');
     }
-    public function update()
-    {
-      return redirect('admin/profile/edit');
-    }
-    public function create(Request $request)
+
+    public function update(Request $request)
     {
         //15課課題
         //validationを行う
-        $this->validate($request, Profile::rules);
+        $this->validate($request, profile::$rules);
 
-        $profile = profile Profile;
+        $profile = new Profile;
         $form = $request->all();
 
         //formから送信されてきた_tokenを削除する
