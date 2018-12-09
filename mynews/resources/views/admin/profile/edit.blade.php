@@ -12,7 +12,7 @@
       {{-- layouts/profile.blade.phpを読み込む --}}
       @extends('layouts.profile')
 
-      {{-- profile.blade.phpの@yield('title')に'ニュースの新規作成'を埋め込む --}}
+      {{-- profile.blade.phpの@yield('title')に'My プロフィール'を埋め込む --}}
       @section('title', 'My プロフィール')
 
       {{-- profile.blade.phpの@yield('content')に以下のタグを埋め込む --}}
@@ -39,20 +39,19 @@
                       <div class="form-group row">
                           <label class="col-md-2" for="gender">性別</label>
                           <div class="col-md-10">
-                                <input type="radio" class="form-control" name="gender" value="{{ old('gender') == 'male'}}">　男性
-                                <input type="radio" class="form-control" name="gender" value="{{ old('gender') == 'female'}}">　女性
+                                <input type="text" class="form-control" name="gender" value="{{ old('gender') }}">
                         </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="hobby">趣味</label>
                           <div class="col-md-10">
-                              <textarea class="form-control" name="hobby" rows="10">{{ old('hobby') }}</textarea>
+                              <textarea class="form-control" name="hobby" rows="20">{{ old('hobby') }}</textarea>
                           </div>
                       </div>
                       <div class="form-group row">
                           <label class="col-md-2" for="introduction">自己紹介欄</label>
                           <div class="col-md-10">
-                              <textarea class="form-control" name="hobby" rows="20">{{ old('introduction') }}</textarea>
+                              <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                           </div>
                       </div>
                       {{ csrf_field() }}
